@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Product Managment System</title>
+  </head>
+  <body >
+    
+    <div class="contanier">
+      <div class="Head">
+        <button class="dark-mode" id="dark-mode" aria-label="Toggle dark mode">
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    stroke-width="1.8"
+    class="moon-icon"
+  >
+    <path
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      d="M21.752 15.002A9.72 9.72 0 0 1 18 15.75
+      c-5.385 0-9.75-4.365-9.75-9.75
+      0-1.33.266-2.597.748-3.752
+      A9.753 9.753 0 0 0 3 11.25
+      C3 16.635 7.365 21 12.75 21
+      a9.753 9.753 0 0 0 9.002-5.998Z"
+    />
+  </svg>
+</button>
+        <h1 id="head">Product Managment System</h1>
+        <p id="sub-title" >here you can gather your products at clear & simple platform</p>
+      </div>
+      <div class="inputs" id="inputs">
+        <h3 class="info-message" id="info-message"></h3>
+        <label id="label-color" class="label-color">title:</label>
+        <input type="text" placeholder="Enter product's Title" id="title" />
+      <p class="title-message hide" id="title-message"></p>
+        
+        <div class="prices">
+          <label id="label-color">price:</label>
+          <input onkeyup="getTotal()" type="number" id="Price" placeholder="Enter product's price" />
+          <p class="price-message hide" id="price-message"></p>
+          <label>taxes:</label>
+          <input onkeyup="getTotal()" type="number" id="Taxes" placeholder="Enter product's Taxes" />
+          <label>ADs:</label>
+          <input onkeyup="getTotal()" type="number" id="ADs" placeholder="Enter ADs Expenses " />
+          <label>Discount:</label>
+          <input onkeyup="getTotal()" type="number" id="Discount" placeholder="Enter product's Discount" />
+          <small id="total">0</small>
+        </div>
+        <label>Category:</label>
+        <input type="text" id="Category" placeholder="Enter product's Category" />
+        <p class="category-message hide" id="category-message"></p>
+        <label id="countLabel" >Count:</label>
+        <input type="number" id="Count" placeholder=" Enter product's Count" />
+        <button class="Create" id="Create">Create</button>
+      </div>
+      <div class="outputs" id="outputs">
+        <div class="search-input">
+          <input onkeyup="searchData(this.value)" type="text" placeholder="search About products" id="search" />
+        </div>
+        <div class="search-block">
+          <button class="btn-search" id="searchCategory" onclick="getSearchMode(this.id)">search by category</button>
+          <button  id="searchTitle" onclick="getSearchMode(this.id)">search by title</button>
+          <div id="deleteAll-btn"></div>
+        </div>
+        <table class="table-body">
+          <tr>
+            <th>ID</th>
+            <th>title</th>
+            <th>prices</th>
+            <th>taxex</th>
+            <th>ads</th>
+            <th>discount</th>
+            <th>category</th>
+            <th>total</th>
+            <th>update</th>
+            <th>delete</th>
+          </tr>
+           <tbody id="tbody">
+            
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <button class="scrolling" id="scrolling"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+  <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 15.75 7.5-7.5 7.5 7.5" />
+</svg>
+
+
+</button>
+    <script src="script.js"></script>
+  </body>
+</html>
